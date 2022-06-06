@@ -1,0 +1,65 @@
+----INSERT
+Create procedure Pa_Categories_Insert
+@CategoryName nvarchar (15) not null, 
+@Description ntext, 
+@Picture image
+
+as
+
+begin
+	insert into 
+		Categories ([CategoryName],[Description],[Picture])
+		Values (
+		 @CategoryName,@Description,@Picture
+		 )
+
+end
+----SELECT
+Create procedure Pa_Categories_Select
+@CategoryName nvarchar (15) not null, 
+@Description ntext, 
+@Picture image
+
+as
+
+begin
+	select * from 
+		Categories ([CategoryName],[Description],[Picture])
+		Values (
+		 @CategoryName,@Description,@Picture
+		 )
+
+end
+
+----UPDATE
+Create procedure Pa_Categories_Update
+@CategoryName nvarchar (15) not null, 
+@Description ntext, 
+@Picture image
+
+as
+
+begin
+	update Categories 
+		set CategoryName= @CategoryName
+			[Description]= @Description
+			Picture= @Picture
+		 
+
+end
+
+----DELETE
+Create procedure Pa_Categories_Delete
+@CategoryName nvarchar (15) not null, 
+@Description ntext, 
+@Picture image
+
+as
+
+begin
+	
+		Delete from Categories 
+		where CategoryName= @CategoryName
+		
+
+end
